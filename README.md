@@ -18,24 +18,15 @@ $ make all
 So make sure your that your `all` target will produce all executables required for the
 tests. 
 
-The github build environment comes with all tools for building C, C++ and Rust pre-installed.
 At the time of writing the following set up is installed:
 
 - C/C++ compilers: gcc (different versions from 7. to 10 i.e. gcc-10), clang 6-9
 - C/C++ build systems: cmake: 3.19.6 autoconf: 2.69, automake: 1.15.1
-- Rust compiler/build system: rustc / cargo: 1.51.0
 - fuse: 2.9.9-3
 
 ## Tests
 
-Our tests will lookup exectuables in one of the following directories (assuming `./` is the project root):
-
-- `./`
-- `./target/release`
-- `./target/debug`
-
-where the latter two directories are usually used by Rust's build system
-[cargo](https://doc.rust-lang.org/cargo/index.html).
+Our tests will lookup exectuables in one of the root directories.
 
 After that it runs individual tests coming from the `tests/` folder (test
 scripts are prefixed with `test_`).
@@ -51,9 +42,6 @@ For convenience our Makefile also comes with `check` target which will run all t
 $ make check
 ```
 
-For the rare occassion that bugs are experienced in the CI but not
-locally, it is also possible to run the github action environment locally
-with [docker](https://www.docker.com/) using this [container](https://github.com/orgs/ls1-courses/packages/container/package/ls1-runner).
 
 ``` console
 # This will mount your current directory as /code into the container
