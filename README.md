@@ -105,8 +105,3 @@ You are free to choose any data structure to manage filesystem data and metadata
 - readlink
 - symlink
 
-## Going further
-
-If you want to go further, you can implement the remaining file operations from the fuse API. You could also investigate other data structures found in modern filesystems (like BTrees), to try and improve the performance of your filesystem. Note that this will not be considered towards the final grade.
-
-The current, fuse filesystem, was implemented entirely in userspace. You could also look into how file systems are implemented in the kernel. For example you could build the very simple filesystem that was described in the lecture, to be run from within the kernel. One reference implementation of such a filesystem can be found [here](https://github.com/rgouicem/ouichefs).
